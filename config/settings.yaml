@@ -1,3 +1,9 @@
 system:
   max_retries: 3
-  db_path: "data/lab_results.db"
+  loop_interval: 10
+  db_path: "data/incidents.db"
+
+thresholds:
+  POTASSIUM:
+    critical_high: 6.2
+    unit: "mmol/L"
