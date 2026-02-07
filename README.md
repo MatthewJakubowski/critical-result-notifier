@@ -91,14 +91,18 @@ sequenceDiagram
 ```text
 critical-result-notifier/
 ├── config/
-│   └── settings.yaml      # Thresholds & Retries configuration
+│   └── settings.yaml      # Configuration (Thresholds & Retries)
 ├── src/
-│   ├── core/              # Business Logic (State Machine)
-│   ├── main.py            # Application Entry Point
-│   └── server.py          # Webhook Listener (FastAPI)
+│   ├── core/              # Core Logic Layer
+│   │   ├── database.py    # SQLite persistence & state management
+│   │   └── notifier.py    # Twilio Voice API wrapper
+│   ├── main.py            # Main Application Entry Point (Orchestrator)
+│   └── server.py          # FastAPI Webhook Listener
 ├── Dockerfile             # Container definition
-├── requirements.txt       # Dependencies
-└── README.md              # Documentation
+├── LICENSE                # MIT License terms
+├── requirements.txt       # Python dependencies
+└── README.md              # Project documentation
+
 ```
 ## 🚀 Deployment (Quick Start)
 **​Prerequisites**: Docker & Twilio Account.
